@@ -1,0 +1,17 @@
+<%= render "layouts/errors", :object => @spot %>
+
+<%= form_for @spot do |f| %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :header %>
+  <%= f.text_field :header %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.label :details %>
+  <%= f.text_area :details %>
+  <%= f.label :availability %>
+  <%= f.text_field :availability %>
+  <%= f.submit %>
+<% end %>

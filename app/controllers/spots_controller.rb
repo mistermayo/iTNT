@@ -1,41 +1,42 @@
 class SpotsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
 
+  def index
+    @spots = Spot.all
+   end
+
   def show
-    @user = User.find(params[:user_id])
     @spot = Spot.find(params[:id])
   end
 
   def new
-    @spot = Spot.find(params[:id])
+    @spot = Spot.new
   end
 
   def edit
-    @user = User.find(params[:user_id])
     @spot = Spot.find(params[:id])
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @spot = User.spots.new(:spots_params)
+    @spot = Spot.new(spots_params)
     if @spot.save
-      redirect_to @spot, notice: "Spot has been successfully listed!"
+      redirect_to spots_path, notice: "Spot has been successfully listed!"
     else
       render :new
     end
   end
 
   def destroy
+
     @spot = Spot.find(params[:id])
     @spot.destroy
     redirect_to spots_path
   end
 
   def update
-    @user = User.find(params[:user_id])
     @spot = Spot.find(params[:id])
-    if @spot.update(spot_params)
-      redirect_to spots_path
+    if @spot.update(params[:spot])
+      redirect_to spots_path(@spot)
     else
       render :edit
     end
@@ -43,6 +44,6 @@ class SpotsController < ApplicationController
 
   private
   def spots_params
-    params.require(:spot).permit(:location, :heading, :description, :price, :details, :images, :availability, :user_id)
+    params.require(:spot).permit(:location, :header, :description, :price, :details, :images, :availability, :user_id)
   end
 end
