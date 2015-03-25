@@ -10,3 +10,9 @@
   add a spot form
   which will render user spot listings
 </p>
+
+<% if Spot.all.any? %>
+  <% @spots.each do |spot| %>
+    <li><%= link_to spot.header, spot_path(spot) %></li>
+  <% end %>
+<% end %>

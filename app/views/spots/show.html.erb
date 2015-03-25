@@ -1,0 +1,22 @@
+<!-- <% content_for(:title, "Question | QANDA") %> -->
+<p>
+  This will be an awesome pic of the spot... right here
+</p>
+
+<h1><%= @spot.header %></h1>
+
+<p>
+  <%= @spot.description %>
+</p>
+<ul>
+  <li><%= @spot.details %></li>
+  <li>$<%= @spot.price %></li>
+  <li><%= @spot.location %></li>
+  <li><%= @spot.availability %></li>
+</ul>
+
+
+<p><%= link_to "Edit", edit_spot_path(@spot) %></p>
+<p><%= link_to "Delete", spot_path(@spot), :data => { :confirm => "Are you sure?",
+                                           :method => "delete" } %></p>
+<p><%= link_to "Return to Questions", spots_path %></p>
