@@ -10,6 +10,11 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'factory_girl_rails'
 gem 'devise'
+gem 'bootstrap_form'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'jbuilder', '~> 2.0'
+gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'bcrypt', '~> 3.1.7'
 
 group :development do
   gem 'byebug'
@@ -21,13 +26,13 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'pry'
   gem 'launchy'
 end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'capybara'
 end
 
 group :production do

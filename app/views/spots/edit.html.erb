@@ -2,3 +2,21 @@
 <h1>Edit Your Spot!</h1>
 
 <%= render 'form' %>
+
+<h1>Your Spots</h1>
+
+<% if @user.spots.any? %>
+
+<ul>
+  <% @user.spots.each do |spot| %>
+  <li>
+    <%= link_to spot.header, spot_path(spot) %>
+    <%= link_to "Edit", edit_spot_path(@user, spot) %> |
+    <%= link_to "Delete", spot_path(@user, spot),
+    :data => {:confirm => "Are you sure?",
+      :method => "delete"} %>
+    </li>
+    <% end %>
+
+  </ul>
+  <% end %>

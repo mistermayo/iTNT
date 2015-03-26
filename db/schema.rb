@@ -11,19 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325180136) do
+ActiveRecord::Schema.define(version: 20150326184110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "spots", force: :cascade do |t|
-    t.string  "location"
-    t.string  "header"
-    t.string  "description"
-    t.string  "details"
-    t.decimal "price",        precision: 10, scale: 2
-    t.integer "user_id"
-    t.string  "availability"
+    t.string   "location"
+    t.string   "header"
+    t.string   "description"
+    t.string   "details"
+    t.decimal  "price",              precision: 10, scale: 2
+    t.integer  "user_id"
+    t.string   "availability"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

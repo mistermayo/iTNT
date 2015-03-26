@@ -8,12 +8,14 @@
 <p>
   <%= @spot.description %>
 </p>
-<ul>
-  <li><%= @spot.details %></li>
-  <li>$<%= @spot.price %></li>
-  <li><%= @spot.location %></li>
-  <li><%= @spot.availability %></li>
-</ul>
+
+  <ul>
+    <li><%= image_tag @spot.photo.url(:medium) %></li>
+    <li><%= @spot.details %></li>
+    <li>$<%= @spot.price %></li>
+    <li><%= @spot.location %></li>
+    <li><%= @spot.availability %></li>
+  </ul>
 
 
 <p><%= link_to "Edit", edit_spot_path(@spot) %></p>
