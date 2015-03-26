@@ -5,13 +5,17 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
   <div class="container">
     <div class="row">
-      <span class="site-title"><%= link_to "is The New Timeshare", '/' %></span>
-      <div class="navbar">
+      <div id="site-title" class="col-md-6 left">
+        <%= link_to "is The New Timeshare", '/' %>
+      </div>
+      <div class="navbar col-md-6 right">
         <% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
           <%= link_to 'Edit profile', edit_user_registration_path %> |
@@ -34,6 +38,8 @@
   </div>
 </body>
 <footer>
-  <p><%= link_to "Return to Homepage", spots_path %></p>
+  <div class="container">
+    <p><%= link_to "Return to Homepage", spots_path %></p>
+  </div>
 </footer>
 </html>

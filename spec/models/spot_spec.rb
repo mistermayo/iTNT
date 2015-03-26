@@ -8,4 +8,5 @@ describe Spot do
   it { should validate_presence_of :price }
   it { should validate_presence_of :availability }
   it { should belong_to :user }
+  it { should have_many :photo }
 end

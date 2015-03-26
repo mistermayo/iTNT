@@ -13,6 +13,7 @@ describe "the add a spot process" do
     fill_in 'Price', :with => '50'
     fill_in 'Details', :with => 'apartment'
     fill_in 'Availability', :with => 'never'
+    page.attach_file('spot[photo]', '/Users/Guest/Desktop/iTNT/spec/features/home-cat.jpg')
     click_on 'Create Spot'
     expect(page).to have_content 'successfully'
   end
@@ -28,6 +29,7 @@ describe "the add a spot process" do
     fill_in 'Price', :with => '50'
     fill_in 'Details', :with => 'apartment'
     fill_in 'Availability', :with => 'never'
+    page.attach_file('spot[photo]', '/Users/Guest/Desktop/iTNT/spec/features/home-cat.jpg')
     click_on 'Create Spot'
     # save_and_open_page
     expect(page).to have_content 'error'
@@ -44,6 +46,7 @@ describe "the add a spot process" do
     fill_in 'Price', :with => '50'
     fill_in 'Details', :with => 'apartment'
     fill_in 'Availability', :with => 'never'
+    page.attach_file('spot[photo]', '/Users/Guest/Desktop/iTNT/spec/features/home-cat.jpg')
     click_on 'Create Spot'
     # save_and_open_page
     expect(page).to have_content 'error'
@@ -60,6 +63,7 @@ describe "the add a spot process" do
     fill_in 'Price', :with => '50'
     fill_in 'Details', :with => 'apartment'
     fill_in 'Availability', :with => ''
+    page.attach_file('spot[photo]', '/Users/Guest/Desktop/iTNT/spec/features/home-cat.jpg')
     click_on 'Create Spot'
     # save_and_open_page
     expect(page).to have_content 'error'

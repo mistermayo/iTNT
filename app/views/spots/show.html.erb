@@ -1,16 +1,13 @@
 <% content_for(:title, "Welcome! | iTNT")%>
-<p>
-  This will be an awesome pic of the spot... right here
-</p>
-
 <h1><%= @spot.header %></h1>
+
+<%= image_tag @spot.photo.url(:medium) %>
 
 <p>
   <%= @spot.description %>
 </p>
 
   <ul>
-    <li><%= image_tag @spot.photo.url(:medium) %></li>
     <li><%= @spot.details %></li>
     <li>$<%= @spot.price %></li>
     <li><%= @spot.location %></li>
