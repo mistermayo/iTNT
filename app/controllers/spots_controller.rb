@@ -3,7 +3,11 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all
-   end
+  end
+
+  def browse
+    @spots = Spot.all
+  end
 
   def show
     @spot = Spot.find(params[:id])
@@ -27,16 +31,15 @@ class SpotsController < ApplicationController
   end
 
   def destroy
-
     @spot = Spot.find(params[:id])
     @spot.destroy
-    redirect_to spots_path
+    redirect_to spots_path, notice: "Spot removed from inventory"
   end
 
   def update
     @spot = Spot.find(params[:id])
     if @spot.update(spots_params)
-      redirect_to spots_path(@spot)
+      redirect_to spots_path(@spot), notice: "Spot edit complete"
     else
       render :edit
     end

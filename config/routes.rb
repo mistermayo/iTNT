@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root :to => 'spots#index'
 
   resources :spots
+
+  get "/browse" => "spots#browse"
+  post "/browse" => "spots#browse"
 end

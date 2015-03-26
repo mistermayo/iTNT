@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
-
-
-
   def create
     @user = User.new(users_params)
     if @user.save
-      redirect_to users_path
+      redirect_to users_path, notice: "Signed up successfully."
     else
       render :new
     end

@@ -5,4 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :spots
+
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    UserMailer.signup_confirmation(self).deliver_now
+  end
 end

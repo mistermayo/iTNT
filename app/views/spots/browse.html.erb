@@ -1,0 +1,7 @@
+<h1>Browse Spots</h1>
+
+<% if Spot.all.any? %>
+<% @spots.each do |spot| %>
+<li><%= link_to spot.header, spot_path(spot) %></li>
+<% end %>
+<% end %>
